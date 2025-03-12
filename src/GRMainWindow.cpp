@@ -502,7 +502,7 @@ void GRMainWindow::Login(char *email, char *password)
 	//testPacket(wxT("data/000000D1.bin"));
 	//testPacket(wxT("data/000000D3.bin"));
 	//testPacket(wxT("data/0000000B.bin"));
-	
+
 }
 //-------------------------------------------------------------------------------------
 void GRMainWindow::createControls()
@@ -527,11 +527,9 @@ void GRMainWindow::createControls()
 	gameRoomList->InsertColumn(6, wxT(""), wxLIST_FORMAT_LEFT, 34);
 	gameRoomList->SetColumnImage(6, 1);
 
-	
 	//Add Notebook to sizer
 	//topSizer->Add(notebook, 2, wxALIGN_TOP | wxALIGN_CENTER | wxALL | wxGROW | wxEXPAND, 5);
-	topSizer->Add(gameRoomList, 2, wxALIGN_TOP | wxALIGN_CENTER | wxALL, 5);
-	
+	topSizer->Add(gameRoomList, 2, wxALL | wxGROW | wxEXPAND, 5);
 
 	//ComboBox
 	lobbyComboBox = new wxComboBox(this, COMBOBOX_ID, wxT(""), wxDefaultPosition,
@@ -562,17 +560,17 @@ void GRMainWindow::createControls()
 	wxBoxSizer *middleSizer = new wxBoxSizer(wxVERTICAL);
 
 	//Chat window and chat edit field
-	middleSizer->Add(chatTextCtrl, 1, wxALIGN_CENTER | wxRIGHT | wxBOTTOM, 5);
-	middleSizer->Add(chatEditField, 0, wxALIGN_CENTER | wxRIGHT, 5);
+	middleSizer->Add(chatTextCtrl, 1, wxRIGHT | wxBOTTOM | wxGROW, 5);
+	middleSizer->Add(chatEditField, 0, wxRIGHT | wxGROW, 5);
 
 	//user list/combo box
-	rightSizer->Add(lobbyComboBox, 0, wxALIGN_RIGHT | wxALIGN_TOP | wxRIGHT | wxBOTTOM, 5);
-	rightSizer->Add(userListBox, 1, wxALIGN_RIGHT | wxRIGHT | wxBOTTOM, 5);
+	rightSizer->Add(lobbyComboBox, 0, wxRIGHT | wxBOTTOM | wxGROW, 5);
+	rightSizer->Add(userListBox, 1, wxRIGHT | wxBOTTOM | wxGROW, 5);
 
 	//add to main chat sizer
-	chatSizer->Add(middleSizer, 3, wxALIGN_CENTER | wxALL, 0);
-	chatSizer->Add(rightSizer, 1, wxALL, 0);
-	
+	chatSizer->Add(middleSizer, 3, wxALL | wxGROW, 0);
+	chatSizer->Add(rightSizer, 1, wxALL | wxGROW | wxEXPAND, 0);
+
 	topSizer->Add(chatSizer, 3, wxBOTTOM | wxLEFT | wxRIGHT, 5);
 
 
@@ -1722,8 +1720,8 @@ void GRMainWindow::appBanner(GR_PACKET *Packet)
 void GRMainWindow::saveBanner(wxUint8 *data, wxUint32 length, wxUint32 bannerID)
 {
 	const char *swfFile = "FWS";
-    const char *gifFile = "GIF";
-    const char *jpgFile = "\xff\xd8";
+	const char *gifFile = "GIF";
+	const char *jpgFile = "\xff\xd8";
 	wxString extension;
 
 	if(memcmp(swfFile, data, 3) == 0)

@@ -45,8 +45,6 @@ GRHostWindow::GRHostWindow(const wxFrame *parent,const wxString &title, const wx
 //-----------------------------------------------------------------------------------
 GRHostWindow::~GRHostWindow()
 {
-
-	
 }
 //--------------------------------------------------------------------------------
 void GRHostWindow::createControls()
