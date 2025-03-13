@@ -272,4 +272,13 @@
     <CustomBuild Include="makefile.gtk" />
     <CustomBuild Include="makefile.mtf" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="conan_conf\conanfile.py" />
+    <None Include="conan_conf\Debug_prf" />
+    <None Include="conan_conf\Release_prf" />
+    <None Include="deps.props" />
+    <None Include="local_update_deps.bat">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
