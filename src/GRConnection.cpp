@@ -168,7 +168,7 @@ void GRConnection::OnConnect()
 	packetCounter = 0;
 
 	/* start pulse timer */
-	timer->Start(360000, false);
+	timer->Start(36000, false);
 }
 /*------------------------------------------------------------------------------*/
 void GRConnection::OnDisconnect()
